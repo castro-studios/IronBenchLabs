@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(php|css|js|json|yml|yaml|env\\)$\")",
+      "Bash(xargs ls:*)",
+      "Bash(sed -i '1025s/5\\\\.0/4.8/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")",
+      "Bash(sed -i '1046s/5\\\\.0/4.7/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")",
+      "Bash(sed -i '1067s/5\\\\.0/4.6/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")",
+      "Bash(sed -i '1088s/5\\\\.0/4.9/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")",
+      "Bash(sed -i '1109s/5\\\\.0/4.5/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")"
+    ]
+  }
+}
