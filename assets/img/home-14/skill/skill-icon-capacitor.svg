@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" fill="#119EFF" rx="32"/>
+  <!-- Capacitor "C" arc mark -->
+  <path fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round"
+    d="M180 80 A72 72 0 1 0 180 176"/>
+  <!-- Inner dot -->
+  <circle cx="128" cy="128" r="18" fill="#fff"/>
+</svg>

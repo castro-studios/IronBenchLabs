@@ -2648,7 +2648,7 @@ input[type=color] {
   right: 0;
   bottom: 0;
   z-index: 1000;
-  background-color: var(--tp-theme-green);
+  background-color: var(--tp-common-yellow-1);
 }
 
 .preloader {
@@ -14576,7 +14576,7 @@ body.tp-magic-cursor #magic-cursor {
 .pp-hero-title {
   margin: 0;
   line-height: 0.8;
-  font-size: 380px;
+  font-size: 320px;
   font-weight: 600;
   letter-spacing: -16px;
   padding-bottom: 15px;
@@ -14593,7 +14593,7 @@ body.tp-magic-cursor #magic-cursor {
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
   .pp-hero-title {
-    font-size: 300px;
+    font-size: 273px;
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {

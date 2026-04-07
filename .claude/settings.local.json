@@ -7,7 +7,14 @@
       "Bash(sed -i '1046s/5\\\\.0/4.7/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")",
       "Bash(sed -i '1067s/5\\\\.0/4.6/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")",
       "Bash(sed -i '1088s/5\\\\.0/4.9/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")",
-      "Bash(sed -i '1109s/5\\\\.0/4.5/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")"
+      "Bash(sed -i '1109s/5\\\\.0/4.5/' \"C:/CodeRepo/Iron-Bench-Labs/index-final-selection.html\")",
+      "Bash(git -C \"C:/CodeRepo/Iron-Bench-Labs\" remote add origin https://github.com/castro-studios/IronBenchLabs.git)",
+      "Bash(git -C \"C:/CodeRepo/Iron-Bench-Labs\" push -u origin master)",
+      "Bash(python3 -c ':*)",
+      "Bash(python -c ':*)",
+      "Bash(powershell:*)",
+      "Bash(ls:*)",
+      "Bash(r)"
     ]
   }
 }
