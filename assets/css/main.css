@@ -11686,37 +11686,58 @@ body.tp-magic-cursor #magic-cursor {
 }
 @media (max-width: 767px) {
   .pp-footer-subtitle {
-    font-size: 38px;
+    font-size: 24px;
   }
 }
 .pp-footer-title {
-  font-size: 180px;
+  font-size: 64px;
   font-weight: 500;
-  line-height: 0.8;
+  line-height: 1.2;
   margin-bottom: 35px;
-  letter-spacing: -5.4px;
+  letter-spacing: -2px;
   font-family: var(--tp-ff-teko);
   color: var(--tp-common-yellow-1);
 }
+@media only screen and (min-width: 1600px) and (max-width: 1700px) {
+  .pp-footer-title {
+    font-size: 60px;
+    letter-spacing: -2px;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {
+  .pp-footer-title {
+    font-size: 56px;
+    letter-spacing: -2px;    
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .pp-footer-title {
+    font-size: 52px;
+    letter-spacing: -2px;    
+  }
+}
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .pp-footer-title {
-    font-size: 150px;
+    font-size: 46px;
+    letter-spacing: -1px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .pp-footer-title {
-    font-size: 115px;
+    font-size: 40px;
+    letter-spacing: -1px;
   }
 }
 @media (max-width: 767px) {
   .pp-footer-title {
-    font-size: 52px;
+    font-size: 32px;
     letter-spacing: 0;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .pp-footer-title {
-    font-size: 65px;
+    font-size: 34px;
+    letter-spacing: 0;
   }
 }
 .pp-footer-btn {
@@ -14593,36 +14614,38 @@ body.tp-magic-cursor #magic-cursor {
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
   .pp-hero-title {
-    font-size: 273px;
+    font-size: 256px;
+    letter-spacing: -10px;    
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .pp-hero-title {
-    font-size: 242px;
+    font-size: 210px;
+    letter-spacing: -10px;    
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .pp-hero-title {
-    font-size: 200px;
+    font-size: 180px;
     letter-spacing: -10px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .pp-hero-title {
-    font-size: 135px;
+    font-size: 98px;
     letter-spacing: -6px;
   }
 }
 @media (max-width: 767px) {
   .pp-hero-title {
-    font-size: 65px;
-    letter-spacing: 0px;
+    font-size: 77px;
+    letter-spacing: -4px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .pp-hero-title {
-    font-size: 100px;
-    letter-spacing: 0px;
+    font-size: 84px;
+    letter-spacing: 2px;
   }
 }
 
