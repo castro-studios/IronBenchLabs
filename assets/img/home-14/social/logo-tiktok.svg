@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
-  <rect width="300" height="300" fill="#010101"/>
-  <!-- Shadow layers for TikTok 3D effect -->
-  <path fill="#25f4ee" d="M222 93a95 95 0 0 1-55-18v80a76 76 0 1 1-66-75v42a35 35 0 1 0 24 33V18h42a95 95 0 0 0 55 75z" transform="translate(6,0)"/>
-  <path fill="#fe2c55" d="M222 93a95 95 0 0 1-55-18v80a76 76 0 1 1-66-75v42a35 35 0 1 0 24 33V18h42a95 95 0 0 0 55 75z" transform="translate(-6,0)"/>
-  <!-- White foreground -->
-  <path fill="#fff" d="M222 93a95 95 0 0 1-55-18v80a76 76 0 1 1-66-75v42a35 35 0 1 0 24 33V18h42a95 95 0 0 0 55 75z"/>
-</svg>
