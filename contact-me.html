@@ -319,7 +319,7 @@
                                                                 <span class="text-2">Send Message</span>
                                                             </span>
                                                         </button>
-                                                        <p class="ajax-response mt-5"></p>
+                                                        <p class="ajax-response mt-5" style="color:#ffffff; font-weight:600; font-size:18px;"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -480,6 +480,8 @@
                 if (!resp) return;
                 resp.classList.remove('success', 'error');
                 if (cls) resp.classList.add(cls);
+                // Bright, high-contrast colors so the message pops on the dark form.
+                resp.style.color = cls === 'error' ? '#ff6b6b' : (cls === 'success' ? '#5dff9d' : '#ffffff');
                 resp.textContent = msg;
             }
 
