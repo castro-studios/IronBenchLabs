@@ -1,1 +1,5 @@
-.claude/worktrees/
+.claude/
+
+# Visual Studio editor state (local clutter, never deploy)
+.vs/
+assets/.vs/
