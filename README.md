@@ -17,9 +17,11 @@ After every `git push origin master`, you must finish the deploy in cPanel:
 Confirm the **Last Deployed SHA** matches your latest commit, then hard-refresh
 the live site (Ctrl+F5) to bust the cache.
 
-> How it works: `.cpanel.yml` copies `index.html`, `contact-me.html`, `.htaccess`,
-> and the `assets/` folder into `public_html`. It only overwrites those items and
-> never deletes anything else in `public_html`.
+> How it works: `.cpanel.yml` copies `index.html`, `contact-me.html`, `privacy.html`,
+> `terms.html`, `sms-policy.html`, `.htaccess`, and the `assets/` folder into
+> `public_html`. It only overwrites those items and never deletes anything else in
+> `public_html`. **If you add a new top-level `.html` page, you must add a
+> `/bin/cp` line for it in `.cpanel.yml` or it will never deploy.**
 
 ---
 

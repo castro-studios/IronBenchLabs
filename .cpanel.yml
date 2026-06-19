@@ -4,5 +4,8 @@ deployment:
     - export DEPLOYPATH=/home/ironogis/public_html/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp contact-me.html $DEPLOYPATH
+    - /bin/cp privacy.html $DEPLOYPATH
+    - /bin/cp terms.html $DEPLOYPATH
+    - /bin/cp sms-policy.html $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
