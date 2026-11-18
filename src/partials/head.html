@@ -1,0 +1,20 @@
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg">
+<link rel="apple-touch-icon" href="assets/img/favicon/favicon.svg">
+
+<!-- Pick the theme before first paint: saved choice, else the system setting. -->
+<script>
+    (function () {
+        var t = null;
+        try { t = localStorage.getItem('ibl-theme'); } catch (e) { }
+        if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.classList.add('js');
+    })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/css/studio.css">
