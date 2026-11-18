@@ -12,8 +12,13 @@ The `.html` files at the repo root are **generated**. Don't edit them directly.
 
 - `src/pages/*.html`: one source file per page (page-specific content).
 - `src/partials/*.html`: shared pieces included into every page:
-  `head.html` (favicon + CSS), `offcanvas.html`, `header.html`, `nav.html`
+  `head.html` (favicon, fonts, CSS, theme pick), `header.html`, `nav.html`
   (the menu), `footer.html`, `scripts.html`.
+
+The look lives in two hand-written files with no framework behind them:
+`assets/css/studio.css` (colours and fonts are variables at the top) and
+`assets/js/studio.js` (lights switch, menu, ticker, scroll reveal, tilt).
+The old bought template's CSS/JS is still under `assets/` but no page loads it.
 
 After any change:
 

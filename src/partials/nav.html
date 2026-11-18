@@ -1,19 +1,15 @@
-<!-- Site menu: main.js copies this into the offcanvas panel. {{home}} is "" on the homepage, "index.html" elsewhere. -->
-<nav class="tp-mobile-menu-active d-none">
-    <ul>
-        <li class="has-dropdown p-static is-active">
-            <a href="{{home}}#work">Our Work</a>
-            <ul class="tp-submenu submenu">
-                <li><a href="https://www.benchboard.org" target="_blank" rel="noopener">BenchBoard</a></li>
-                <li><a href="https://bossfight.net" target="_blank" rel="noopener">Boss Fight</a></li>
-                <li><a href="{{home}}#work">Rad Invoice &middot; Soon</a></li>
-                <li><a href="https://radicalinsider.org" target="_blank" rel="noopener">Radical Insider</a></li>
-                <li><a href="https://nearmynt.com" target="_blank" rel="noopener">Nearmynt</a></li>
-                <li><a href="{{home}}#work">Kicking Dust &middot; Soon</a></li>
-            </ul>
-        </li>
-        <li><a href="{{home}}#services">Build With Us</a></li>
-        <li><a href="{{home}}#about">About</a></li>
-        <li><a href="contact-me.html">Contact</a></li>
-    </ul>
+<!-- Site menu: inline on desktop, full-screen on phones. The property list shows on phones only. -->
+<nav class="nav" id="nav" aria-label="Main">
+    <a href="{{home}}#work">Work</a>
+    <a href="{{home}}#services">Build With Us</a>
+    <a href="{{home}}#about">About</a>
+    <a href="contact-me.html">Contact</a>
+    <div class="nav-props">
+        <a href="https://www.benchboard.org" target="_blank" rel="noopener">BenchBoard</a>
+        <a href="https://bossfight.net" target="_blank" rel="noopener">Boss Fight</a>
+        <a href="{{home}}#p-radinvoice">Rad Invoice &middot; soon</a>
+        <a href="https://radicalinsider.org" target="_blank" rel="noopener">Radical Insider</a>
+        <a href="https://nearmynt.com" target="_blank" rel="noopener">Nearmynt</a>
+        <a href="{{home}}#p-kickingdust">Kicking Dust &middot; soon</a>
+    </div>
 </nav>

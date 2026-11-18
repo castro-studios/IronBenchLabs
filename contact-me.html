@@ -1,10 +1,9 @@
 ﻿<!doctype html>
-<html class="no-js" lang="zxx">
+<html lang="en">
 
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Contact - Iron Bench Labs LLC</title>
     <meta name="description" content="Tell us what you want built — apps, SaaS products, online stores, automation or support. IronBench Labs will help you ship it.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,457 +27,180 @@
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon/favicon.svg">
     <link rel="apple-touch-icon" href="assets/img/favicon/favicon.svg">
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
-    <link rel="stylesheet" href="assets/css/spacing.css">
-    <link rel="stylesheet" href="assets/css/atropos.min.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Pick the theme before first paint: saved choice, else the system setting. -->
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('ibl-theme'); } catch (e) { }
+            if (t !== 'light' && t !== 'dark') {
+                t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap">
+    <link rel="stylesheet" href="assets/css/studio.css">
 
 </head>
 
-<body class="tp-magic-cursor" data-bg-color="#0E0F11">
+<body>
 
-    <!-- Begin magic cursor -->
-    <div id="magic-cursor" class="cursor-bg-yellow">
-        <div id="ball"></div>
-    </div>
-    <!-- End magic cursor -->
-
-    <!-- preloader -->
-
-    <!-- preloader -->
-    <div id="preloader">
-        <div class="preloader">
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <!-- preloader end  -->
-    <!-- preloader end  -->
-
-    <!-- back to top start -->
-    <!-- back to top start -->
-    <div class="back-to-top-wrapper">
-        <button id="back_to_top" type="button" class="back-to-top-btn">
-            <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </button>
-    </div>
-    <!-- back to top end -->
-    <!-- back to top end -->
-
-    <!-- offcanvas start -->
-
-    <div class="tp-offcanvas-2-area p-relative @@class">
-        <div class="tp-offcanvas-2-bg is-left left-box"></div>
-        <div class="tp-offcanvas-2-bg is-right right-box d-none d-md-block"></div>
-        <div class="tp-offcanvas-2-wrapper">
-            <div class="tp-offcanvas-2-left left-box">
-                <div class="tp-offcanvas-2-left-wrap d-flex justify-content-between align-items-center">
-                    <div class="tp-offcanvas-2-logo">
-                        <a href="index.html">
-                            <img class="logo-1" data-width="71" src="assets/img/logo/logo-white.png" width="71" height="57" alt="">
-                            <img class="logo-2" data-width="140" src="assets/img/logo/logo-black.png" alt="">
-                        </a>
-                    </div>
-                    <div class="tp-offcanvas-2-close d-md-none text-end">
-                        <button class="tp-offcanvas-2-close-btn">
-                            <span class="text">
-                                <span>close</span>
-                            </span>
-                            <span class="d-inline-block">
-                                <span>
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="32.621" height="1.00918" transform="matrix(0.704882 0.709325 -0.704882 0.709325 1.0061 0)" fill="currentcolor"></rect>
-                                        <rect width="32.621" height="1.00918" transform="matrix(0.704882 -0.709325 0.704882 0.709325 0 23.2842)" fill="currentcolor"></rect>
-                                    </svg>
-                                </span>
-                            </span>
-                        </button>
-                    </div>
+    <!-- header: index.html is "" on the homepage and "index.html" elsewhere -->
+    <div class="progress" aria-hidden="true"></div>
+    <header class="site-head">
+        <div class="wrap site-head-in">
+            <a class="brand" href="index.html" aria-label="IronBench Labs home">
+                <span class="brand-mark" aria-hidden="true">IB</span>
+                <span class="brand-name">IronBench<em>Labs</em></span>
+            </a>
+            <!-- Site menu: inline on desktop, full-screen on phones. The property list shows on phones only. -->
+            <nav class="nav" id="nav" aria-label="Main">
+                <a href="index.html#work">Work</a>
+                <a href="index.html#services">Build With Us</a>
+                <a href="index.html#about">About</a>
+                <a href="contact-me.html">Contact</a>
+                <div class="nav-props">
+                    <a href="https://www.benchboard.org" target="_blank" rel="noopener">BenchBoard</a>
+                    <a href="https://bossfight.net" target="_blank" rel="noopener">Boss Fight</a>
+                    <a href="index.html#p-radinvoice">Rad Invoice &middot; soon</a>
+                    <a href="https://radicalinsider.org" target="_blank" rel="noopener">Radical Insider</a>
+                    <a href="https://nearmynt.com" target="_blank" rel="noopener">Nearmynt</a>
+                    <a href="index.html#p-kickingdust">Kicking Dust &middot; soon</a>
                 </div>
-                <div class="tp-offcanvas-menu counter-row">
-                    <nav></nav>
-                </div>
-            </div>
-            <div class="tp-offcanvas-2-right right-box d-none d-md-block p-relative">
-                <div class="tp-offcanvas-2-close text-end">
-                    <button class="tp-offcanvas-2-close-btn">
-                        <span class="text"><span>close</span></span>
-                        <span class="d-inline-block">
-                            <span>
-                                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9.80859 9.80762L28.1934 28.1924" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M9.80859 28.1924L28.1934 9.80761" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </span>
-                        </span>
-                    </button>
-                </div>
-                <div class="tp-offcanvas-2-right-info-box mt-160">
-                    <h4 class="tp-offcanvas-2-right-info-title">Get In Touch</h4>
-                    <div class="tp-offcanvas-2-right-info-item">
-                        <label class="mb-10">Email</label>
-                        <a class="tp-line-white ibl-email" href="#" data-user="learnmore" data-domain="ironbench.org">[ enable JavaScript ]</a>
-                    </div>
-                    <div class="tp-offcanvas-2-right-info-item">
-                        <label class="mb-10">Address</label>
-                        <a class="tp-line-white" href="#">
-                            United States
-                        </a>
-                    </div>
-                    <div class="tp-offcanvas-2-right-info-item">
-                        <label class="mb-15">Follow us</label>
-                        <div class="tp-offcanvas-2-right-social">
-                            <a href="#">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16.9992 10.0108C16.2577 9.8718 15.4952 9.79934 14.717 9.79934C10.4351 9.79934 6.6267 11.9933 4.19922 15.3993M14.6 3.3986C12.0964 6.33251 8.33431 8.19855 4.12769 8.19855C3.05149 8.19855 2.00438 8.07641 1 7.84551M11.0942 17C11.2947 16.0289 11.4 15.023 11.4 13.9926C11.4 8.93984 8.86746 4.47731 5 1.80018M17 8.99906C17 13.4173 13.4183 16.999 9 16.999C4.58172 16.999 1 13.4173 1 8.99906C1 4.58083 4.58172 0.999146 9 0.999146C13.4183 0.999146 17 4.58083 17 8.99906Z" stroke="currentcolor" stroke-width="1.5" stroke-linejoin="round" />
-                                </svg>
-                            </a>
-                            <a href="#">
-                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.41177 0H0L5.23083 7.06953L0.334618 13H2.59681L6.29998 8.51461L9.58823 12.9588H14L8.6172 5.68381L8.62673 5.69636L13.2614 0.0825854H10.9992L7.55741 4.25145L4.41177 0ZM2.43522 1.2381H3.80866L11.5648 11.7206H10.1913L2.43522 1.2381Z" fill="currentcolor" />
-                                </svg>
-                            </a>
-                            <a href="#">
-                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.8438 5.15771C13.396 5.15771 13.8438 4.71 13.8438 4.15771C13.8438 3.60543 13.396 3.15771 12.8438 3.15771V5.15771ZM12.8348 3.15771C12.2825 3.15771 11.8348 3.60543 11.8348 4.15771C11.8348 4.71 12.2825 5.15771 12.8348 5.15771V3.15771ZM8.5 15C6.70396 15 5.45753 14.9979 4.51848 14.8716C3.60819 14.7492 3.13786 14.5269 2.80546 14.1945L1.39124 15.6088C2.15719 16.3747 3.11992 16.7016 4.25198 16.8538C5.35528 17.0021 6.7605 17 8.5 17V15ZM0 8.5C0 10.2395 -0.00212373 11.6447 0.146211 12.748C0.298413 13.8801 0.625299 14.8428 1.39124 15.6088L2.80546 14.1945C2.47305 13.8621 2.25076 13.3918 2.12838 12.4815C2.00212 11.5425 2 10.296 2 8.5H0ZM15 8.5C15 10.296 14.9979 11.5425 14.8716 12.4815C14.7492 13.3918 14.5269 13.8621 14.1945 14.1945L15.6088 15.6088C16.3747 14.8428 16.7016 13.8801 16.8538 12.748C17.0021 11.6447 17 10.2395 17 8.5H15ZM8.5 17C10.2395 17 11.6447 17.0021 12.748 16.8538C13.8801 16.7016 14.8428 16.3747 15.6088 15.6088L14.1945 14.1945C13.8621 14.5269 13.3918 14.7492 12.4815 14.8716C11.5425 14.9979 10.296 15 8.5 15V17ZM8.5 2C10.296 2 11.5425 2.00212 12.4815 2.12838C13.3918 2.25076 13.8621 2.47305 14.1945 2.80546L15.6088 1.39124C14.8428 0.625299 13.8801 0.298413 12.748 0.146211C11.6447 -0.00212374 10.2395 0 8.5 0V2ZM17 8.5C17 6.7605 17.0021 5.35528 16.8538 4.25198C16.7016 3.11992 16.3747 2.15719 15.6088 1.39124L14.1945 2.80546C14.5269 3.13786 14.7492 3.60819 14.8716 4.51848C14.9979 5.45753 15 6.70396 15 8.5H17ZM8.5 0C6.7605 0 5.35528 -0.00212374 4.25198 0.146211C3.11992 0.298413 2.15719 0.625299 1.39124 1.39124L2.80546 2.80546C3.13786 2.47305 3.60819 2.25076 4.51848 2.12838C5.45753 2.00212 6.70396 2 8.5 2V0ZM2 8.5C2 6.70396 2.00212 5.45753 2.12838 4.51848C2.25076 3.60819 2.47305 3.13786 2.80546 2.80546L1.39124 1.39124C0.625299 2.15719 0.298413 3.11992 0.146211 4.25198C-0.00212373 5.35528 0 6.7605 0 8.5H2ZM11.0545 8.50136C11.0545 9.91114 9.91163 11.054 8.50185 11.054V13.054C11.0162 13.054 13.0545 11.0157 13.0545 8.50136H11.0545ZM8.50185 11.054C7.09207 11.054 5.94922 9.91114 5.94922 8.50136H3.94922C3.94922 11.0157 5.9875 13.054 8.50185 13.054V11.054ZM5.94922 8.50136C5.94922 7.09158 7.09207 5.94873 8.50185 5.94873V3.94873C5.9875 3.94873 3.94922 5.98701 3.94922 8.50136H5.94922ZM8.50185 5.94873C9.91163 5.94873 11.0545 7.09158 11.0545 8.50136H13.0545C13.0545 5.98701 11.0162 3.94873 8.50185 3.94873V5.94873ZM12.8438 3.15771H12.8348V5.15771H12.8438V3.15771Z" fill="currentcolor" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            </nav>
+            <div class="head-actions">
+                <button class="lights" id="theme-toggle" type="button" aria-label="Switch between light and dark">
+                    <span class="lights-ico" aria-hidden="true"></span><span class="lights-txt">Lights</span>
+                </button>
+                <a class="btn btn--sm" href="#contact-form">Get in touch</a>
+                <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
             </div>
         </div>
-    </div>
-    <!-- offcanvas end -->
+    </header>
 
-    <!-- header area start -->
-    <div class="tp-header-14-area header-transparent">
-        <div class="container container-1800">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="tp-header-14-wrapper d-flex align-items-center justify-content-between">
-                        <div class="tp-header-14-left">
-                            <div class="tp-header-logo">
-                                <a href="index.html"><img src="assets/img/logo/logo-white.png" width="71" height="57" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="tp-header-14-right d-flex align-items-center">
-                            <div class="tp-header-14-info d-none d-md-block">
-                                <a class="tp-line-white" href="#contact-form">Get In Touch</a>
-                            </div>
-                            <div class="tp-header-14-bar-wrap ml-20">
-                                <button class="tp-header-8-bar tp-offcanvas-open-btn">
-                                    <span>Menu</span>
-                                    <span>
-                                        <svg width="24" height="8" viewBox="0 0 24 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 0H14V1.5H0V0Z" fill="currentcolor" />
-                                            <path d="M0 6H24V7.5H0V6Z" fill="currentcolor" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
+    <main>
+
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="eyebrow"><span class="dot"></span> Work with us</p>
+                <h1 class="page-title">Tell us what you want built &mdash; <span class="serif hot">we'll help you ship it.</span></h1>
+                <p class="lede">Have an app, store or SaaS idea worth building? Need a process automated or a system kept running? Tell us a bit about it and we'll get right back to you.</p>
+            </div>
+        </section>
+
+        <section class="band band--tight" style="padding-top:0">
+            <div class="wrap">
+
+                <div data-reveal>
+                    <span class="label hot">I'm reaching out about...</span>
+                    <div class="chips" role="group" aria-label="What you're reaching out about">
+                        <button type="button" class="chip active" aria-pressed="true">Custom Software</button>
+                        <button type="button" class="chip" aria-pressed="false">Automation</button>
+                        <button type="button" class="chip" aria-pressed="false">IT / Software Support</button>
+                        <button type="button" class="chip" aria-pressed="false">Programming Class</button>
+                        <button type="button" class="chip" aria-pressed="false">Software Training</button>
+                        <button type="button" class="chip" aria-pressed="false">BenchBoard</button>
+                        <button type="button" class="chip" aria-pressed="false">Boss Fight</button>
+                        <button type="button" class="chip" aria-pressed="false">Rad Invoice</button>
+                        <button type="button" class="chip" aria-pressed="false">Sponsoring</button>
+                        <button type="button" class="chip" aria-pressed="false">Partnership</button>
+                        <button type="button" class="chip" aria-pressed="false">General Inquiry</button>
                     </div>
                 </div>
+
+                <div class="form-card" data-reveal>
+                    <h2>Let's talk.</h2>
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms config: replace the access key below with your own from https://web3forms.com (free, tied to your email) -->
+                        <input type="hidden" name="access_key" value="ed6ab040-f78b-498a-905f-d414ebd91be4">
+                        <input type="hidden" name="subject" value="New IronBench Labs contact request">
+                        <input type="hidden" name="from_name" value="IronBench Labs Website">
+                        <input type="hidden" name="interest" id="contact-interest" value="Custom Software">
+                        <!-- Honeypot spam filter -->
+                        <input type="checkbox" name="botcheck" id="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="f-name">Full name*</label>
+                                <input id="f-name" name="name" type="text" autocomplete="name">
+                            </div>
+                            <div class="field">
+                                <label for="f-email">Email address*</label>
+                                <input id="f-email" name="email" type="email" autocomplete="email">
+                            </div>
+                            <div class="field">
+                                <label for="f-phone">Phone number</label>
+                                <input id="f-phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" autocomplete="tel">
+                            </div>
+                            <div class="field">
+                                <label for="f-website">Website link</label>
+                                <input id="f-website" name="website" type="text">
+                            </div>
+                            <div class="field field--full">
+                                <label for="f-message">What can we help with? A few sentences is plenty.</label>
+                                <textarea id="f-message" name="message"></textarea>
+                            </div>
+                            <div class="consent">
+                                <input type="checkbox" id="sms-consent" name="sms_consent" value="yes">
+                                <label for="sms-consent">
+                                    I agree to receive SMS text messages from IronBench Labs related to team invites, RSVP links, game reminders, lineup updates, and account notifications. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for help. Consent is not required to use IronBench Labs.
+                                    <a href="sms-policy.html" target="_blank">See our SMS Policy</a>.
+                                </label>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn" type="submit">Send message <span class="arr" aria-hidden="true">&rarr;</span></button>
+                                <p class="ajax-response" role="status"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-foot invert">
+        <div class="wrap">
+            <p class="eyebrow"><span class="dot"></span> Got something worth building?</p>
+            <div>
+                <a class="foot-mail ibl-email" href="#" data-user="learnmore" data-domain="ironbench.org">[ enable JavaScript to view ]</a>
+            </div>
+            <div class="foot-cta">
+                <a class="btn" href="index.html">Back to home <span class="arr" aria-hidden="true">&rarr;</span></a>
+                <a class="btn btn--ghost" href="index.html#work">See our work <span class="arr" aria-hidden="true">&rarr;</span></a>
+            </div>
+
+            <!-- property links: unreleased ones are plain text until they launch -->
+            <div class="foot-props">
+                <a href="https://www.benchboard.org" target="_blank" rel="noopener">BenchBoard</a>
+                <a href="https://bossfight.net" target="_blank" rel="noopener">Boss Fight</a>
+                <span>Rad Invoice <small>soon</small></span>
+                <a href="https://radicalinsider.org" target="_blank" rel="noopener">Radical Insider</a>
+                <a href="https://nearmynt.com" target="_blank" rel="noopener">Nearmynt</a>
+                <span>Kicking Dust <small>soon</small></span>
+            </div>
+
+            <div class="foot-bottom">
+                <span>&copy; 2026 all rights reserved &middot; Iron Bench Labs LLC</span>
+                <span class="foot-tag">Build. Ship. Operate.</span>
+                <nav aria-label="Legal">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="sms-policy.html">SMS Policy</a>
+                </nav>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <!-- Site menu: main.js copies this into the offcanvas panel. index.html is "" on the homepage, "index.html" elsewhere. -->
-    <nav class="tp-mobile-menu-active d-none">
-        <ul>
-            <li class="has-dropdown p-static is-active">
-                <a href="index.html#work">Our Work</a>
-                <ul class="tp-submenu submenu">
-                    <li><a href="https://www.benchboard.org" target="_blank" rel="noopener">BenchBoard</a></li>
-                    <li><a href="https://bossfight.net" target="_blank" rel="noopener">Boss Fight</a></li>
-                    <li><a href="index.html#work">Rad Invoice &middot; Soon</a></li>
-                    <li><a href="https://radicalinsider.org" target="_blank" rel="noopener">Radical Insider</a></li>
-                    <li><a href="https://nearmynt.com" target="_blank" rel="noopener">Nearmynt</a></li>
-                    <li><a href="index.html#work">Kicking Dust &middot; Soon</a></li>
-                </ul>
-            </li>
-            <li><a href="index.html#services">Build With Us</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="contact-me.html">Contact</a></li>
-        </ul>
-    </nav>
-    <!-- header area end -->
+    <!-- Theme behaviour: email assembly, lights switch, menu, ticker, scroll reveal, tilt. -->
+    <script src="assets/js/studio.js"></script>
 
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
-
-            <main>
-
-                <!-- contact area start -->
-                <div class="tp-contact-me-ptb p-relative z-index-3 pb-105" data-bg-color="#0E0F11">
-                    <div class="tp-career-shape-1">
-                        <span><svg xmlns="http://www.w3.org/2000/svg" width="123" height="130" viewBox="0 0 123 130" fill="none">
-                                <path d="M58.2803 1.15449C63.3023 14.3017 71.049 54.3533 48.1082 67.0973C36.1831 73.4283 11.7107 77.3064 2.37778 43.9355C-1.14293 31.3468 9.61622 20.8908 32.0893 28.8395C45.055 33.4255 76.4207 44.0467 90.5787 70.0771C98.0511 83.8154 104.166 111.84 99.1745 129.671M99.1745 129.671C100.942 121.014 108.128 104.495 122.737 107.673M99.1745 129.671C100.181 123.978 97.0522 110.014 76.485 99.698M75.3644 33.2431C80.479 35.6688 96.6446 46.4742 101.81 64.2891" stroke="white" stroke-width="1.5" />
-                            </svg></span>
-                    </div>
-                    <div class="container container-1230">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="tp-contact-me-heading pb-75 tp_fade_anim" data-delay=".3">
-                                    <span class="tp-section-subtitle-clash clash-subtitle-pos body-ff mb-40">
-                                        Work With Us
-                                        <i>
-                                            <svg width="102" height="9" viewBox="0 0 102 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M98 8L101.5 4.5L98 1M1 4H101V5H1V4Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </svg>
-                                        </i>
-                                    </span>
-                                    <h3 class="pp-service-details-title">
-                                        Tell us what <br>
-                                        you want built — <br>we'll help you ship it.
-                                    </h3>
-                                </div>
-                                <div class="tp-contact-me-wrap">
-                                    <div class="pp-about-content tp_text_anim">
-                                        <p>
-                                            Have an app, store or SaaS idea worth building? <br> Need a process automated or a system kept running? <br> Tell us a bit about it and we'll get right back to you.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pp-service-shape">
-                        <img data-speed="1.1" src="assets/img/home-14/about/about-shape-2.png" alt="">
-                    </div>
-                </div>
-                <!-- contact area end -->
-
-                <!-- contact me area start -->
-                <div class="tp-contact-me-interest-ptb p-relative">
-                    <div class="container container-1230">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-10">
-                                <div class="tp-contact-me-interest-wrapper pb-100">
-                                    <h3 class="tp-contact-me-interest-title">I'm reaching out about...</h3>
-                                    <div class="tp-contact-me-interest-category">
-                                        <span class="tp-contact-category-btn active">Custom Software</span>
-                                        <span class="tp-contact-category-btn">Automation</span>
-                                        <span class="tp-contact-category-btn">IT / Software Support</span>
-                                        <span class="tp-contact-category-btn">Programming Class</span>
-                                        <span class="tp-contact-category-btn">Software Training</span>
-                                        <span class="tp-contact-category-btn">BenchBoard</span>
-                                        <span class="tp-contact-category-btn">Boss Fight</span>
-                                        <span class="tp-contact-category-btn">Rad Invoice</span>
-                                        <span class="tp-contact-category-btn">Sponsoring</span>
-                                        <span class="tp-contact-category-btn">Partnership</span>
-                                        <span class="tp-contact-category-btn">General Inquiry</span>
-                                    </div>
-                                </div>
-                                <div class="tp-contact-me-interest-form">
-                                    <h3 class="tp-contact-me-interest-title">Let's Talk</h3>
-
-                                    <div class="tp-contact-me-interest-form-wrap">
-                                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                                            <!-- Web3Forms config: replace the access key below with your own from https://web3forms.com (free, tied to your email) -->
-                                            <input type="hidden" name="access_key" value="ed6ab040-f78b-498a-905f-d414ebd91be4">
-                                            <input type="hidden" name="subject" value="New IronBench Labs contact request">
-                                            <input type="hidden" name="from_name" value="IronBench Labs Website">
-                                            <input type="hidden" name="interest" id="contact-interest" value="Custom Software">
-                                            <!-- Honeypot spam filter -->
-                                            <input type="checkbox" name="botcheck" id="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="tp-contact-form-input mb-20">
-                                                        <label>Full name*</label>
-                                                        <input name="name" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="tp-contact-form-input mb-20">
-                                                        <label>Email address*</label>
-                                                        <input name="email" type="email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="tp-contact-form-input mb-20">
-                                                        <label>Phone number</label>
-                                                        <input name="phone" type="tel" placeholder="+1 (555) 000-0000">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="tp-contact-form-input mb-20">
-                                                        <label>Website link</label>
-                                                        <input name="website" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="tp-contact-form-input mb-20">
-                                                        <label>What can we help with? A few sentences is plenty.</label>
-                                                        <textarea name="message"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div style="margin-bottom: 30px; padding: 20px; background: rgba(255, 246, 105, 0.06); border: 1px solid rgba(255, 246, 105, 0.2); border-radius: 8px;">
-                                                        <div style="display: flex; align-items: flex-start; gap: 12px;">
-                                                            <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" style="margin-top: 4px; cursor: pointer;">
-                                                            <label for="sms-consent" style="cursor: pointer; margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255, 255, 255, 0.85);">
-                                                                I agree to receive SMS text messages from IronBench Labs related to team invites, RSVP links, game reminders, lineup updates, and account notifications. Message and data rates may apply. Message frequency varies. Reply STOP to opt out or HELP for help. Consent is not required to use IronBench Labs.
-                                                                <a href="sms-policy.html" style="color: #FFF669; text-decoration: underline;" target="_blank">See our SMS Policy</a>.
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12">
-                                                    <div class="tp-contact-form-btn">
-                                                        <button class="w-100" type="submit"><span>
-                                                                <span class="text-1">Send Message</span>
-                                                                <span class="text-2">Send Message</span>
-                                                            </span>
-                                                        </button>
-                                                        <p class="ajax-response mt-5" style="color:#ffffff; font-weight:600; font-size:18px;"></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- contact me area end -->
-
-            </main>
-
-            <footer>
-
-                <!-- footer area start -->
-                <div class="pp-footer-area pp-footer-ptb pt-115">
-                    <div class="container container-1750">
-                        <div class="pp-footer-box">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="pp-footer-wrapper text-center">
-                                        <span class="pp-footer-subtitle tp_fade_anim">Got something worth building?</span>
-                                        <h4 class="pp-footer-title tp_fade_anim not-hide-cursor" data-cursor="Send<br>Mail">
-                                            <a class="codetext cursor-hide ibl-email" href="#" data-user="learnmore" data-domain="ironbench.org">[ enable JavaScript to view ]</a>
-                                        </h4>
-                                        <div class="pp-footer-btn-box d-flex justify-content-center z-index-1">
-                                            <div class="tp_fade_anim" data-delay=".3" data-fade-from="top" data-ease="bounce">
-                                                <a class="pp-footer-btn mr-15" href="index.html">Back to Home
-                                                    <span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                                            <path d="M1 11L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                            <path d="M1 1H11V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                            <div class="tp_fade_anim" data-delay=".5" data-fade-from="top" data-ease="bounce">
-                                                <a class="pp-footer-btn" href="index.html#work">See Our Work
-                                                    <span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                                            <path d="M1 11L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                            <path d="M1 1H11V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- property links: unreleased ones are plain text until they launch -->
-                                        <div style="margin-top: 60px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; font-size: 15px; color: rgba(255, 255, 255, 0.45);">
-                                            <a href="https://www.benchboard.org" target="_blank" rel="noopener" style="color: rgba(255, 255, 255, 0.8);">BenchBoard</a>
-                                            <a href="https://bossfight.net" target="_blank" rel="noopener" style="color: rgba(255, 255, 255, 0.8);">Boss Fight</a>
-                                            <span>Rad Invoice &middot; soon</span>
-                                            <a href="https://radicalinsider.org" target="_blank" rel="noopener" style="color: rgba(255, 255, 255, 0.8);">Radical Insider</a>
-                                            <a href="https://nearmynt.com" target="_blank" rel="noopener" style="color: rgba(255, 255, 255, 0.8);">Nearmynt</a>
-                                            <span>Kicking Dust &middot; soon</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- footer area end -->
-
-                <!-- footer copyright area start -->
-                <div class="pp-footer-copyright-area pp-footer-copyright-ptb">
-                    <div class="container container-1430">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="pp-footer-copyright-wrap">
-                                    <div class="pp-footer-copyright-text">
-                                        <p>© 2026 all rights reserved</p>
-                                    </div>
-                                    <div class="pp-footer-copyright-text-center">
-                                        <p>Build. Ship. Operate.</p>
-                                        <div style="margin-top: 12px; font-size: 13px;">
-                                            <a href="privacy.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin: 0 12px;">Privacy</a>
-                                            <a href="terms.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin: 0 12px;">Terms</a>
-                                            <a href="sms-policy.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin: 0 12px;">SMS Policy</a>
-                                        </div>
-                                    </div>
-                                    <div class="pp-footer-copyright-text">
-                                        <p>Iron Bench Labs LLC</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- footer copyright area end -->
-
-            </footer>
-
-        </div>
-    </div>
-
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/bootstrap-bundle.js"></script>
-    <script src="assets/js/swiper-bundle.js"></script>
-    <script src="assets/js/plugin.js"></script>
-    <script src="assets/js/three.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/scroll-magic.js"></script>
-    <script src="assets/js/hover-effect.umd.js"></script>
-    <script src="assets/js/magnific-popup.js"></script>
-    <script src="assets/js/parallax-slider.js"></script>
-    <script src="assets/js/nice-select.js"></script>
-    <script src="assets/js/purecounter.js"></script>
-    <script src="assets/js/isotope-pkgd.js"></script>
-    <script src="assets/js/imagesloaded-pkgd.js"></script>
-    <script src="assets/js/Observer.min.js"></script>
-    <script src="assets/js/splitting.min.js"></script>
-    <script src="assets/js/webgl.js"></script>
-    <script src="assets/js/parallax-scroll.js"></script>
-    <script src="assets/js/atropos.js"></script>
-    <script src="assets/js/slider-active.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/tp-cursor.js"></script>
-    <script src="assets/js/portfolio-slider-1.js"></script>
-    <script type="module" src="assets/js/distortion-img.js"></script>
-    <script type="module" src="assets/js/skew-slider/index.js"></script>
-    <script type="module" src="assets/js/img-revel/index.js"></script>
-
-    <!-- Obfuscated email: assembled client-side so the address never appears in raw HTML -->
-    <script>
-        (function () {
-            document.querySelectorAll('.ibl-email').forEach(function (a) {
-                var user = a.getAttribute('data-user');
-                var domain = a.getAttribute('data-domain');
-                if (!user || !domain) return;
-                var addr = user + '@' + domain;
-                a.setAttribute('href', 'mailto:' + addr);
-                a.textContent = addr;
-            });
-        })();
-    </script>
-<!-- Contact form: interest chips + Web3Forms submission -->
+    <!-- Contact form: interest chips + Web3Forms submission -->
     <script>
         (function () {
             var form = document.getElementById('contact-form');
@@ -486,10 +208,13 @@
             var resp = form.querySelector('.ajax-response');
             var submitBtn = form.querySelector('button[type="submit"]');
             var hidden = document.getElementById('contact-interest');
-            var chips = Array.prototype.slice.call(document.querySelectorAll('.tp-contact-category-btn'));
+            var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
 
-            // Multi-select chips; collect every active one into the hidden "interest" field.
-            // (main.js already toggles .active on click — we just resync the value afterward.)
+            // Multi-select chips; every active one is collected into the hidden "interest" field.
+            function setChip(chip, on) {
+                chip.classList.toggle('active', on);
+                chip.setAttribute('aria-pressed', String(on));
+            }
             function syncInterest() {
                 if (!hidden) return;
                 hidden.value = chips
@@ -498,7 +223,10 @@
                     .join(', ');
             }
             chips.forEach(function (chip) {
-                chip.addEventListener('click', syncInterest);
+                chip.addEventListener('click', function () {
+                    setChip(chip, !chip.classList.contains('active'));
+                    syncInterest();
+                });
             });
             syncInterest();
 
@@ -506,8 +234,6 @@
                 if (!resp) return;
                 resp.classList.remove('success', 'error');
                 if (cls) resp.classList.add(cls);
-                // Bright, high-contrast colors so the message pops on the dark form.
-                resp.style.color = cls === 'error' ? '#ff6b6b' : (cls === 'success' ? '#5dff9d' : '#ffffff');
                 resp.textContent = msg;
             }
 
@@ -525,7 +251,7 @@
                         if (json.success) {
                             setResp('success', "Thanks! Your message has been sent — we'll get back to you shortly.");
                             form.reset();
-                            chips.forEach(function (c, i) { c.classList.toggle('active', i === 0); });
+                            chips.forEach(function (c, i) { setChip(c, i === 0); });
                             syncInterest();
                         } else {
                             setResp('error', json.message || 'Something went wrong. Please try again in a moment.');
