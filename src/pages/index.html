@@ -1,0 +1,1045 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Iron Bench Labs - Independent Software Studio | BenchBoard, Boss Fight, Rad Invoice</title>
+    <meta name="description" content="IronBench Labs is the independent studio behind BenchBoard, Boss Fight and Rad Invoice, plus Radical Insider, Nearmynt and Kicking Dust. We build the same kind of thing for clients.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ironbench.org/">
+    <meta property="og:title" content="Iron Bench Labs - Independent Software Studio | BenchBoard, Boss Fight, Rad Invoice">
+    <meta property="og:description" content="IronBench Labs is the independent studio behind BenchBoard, Boss Fight and Rad Invoice, plus Radical Insider, Nearmynt and Kicking Dust. We build the same kind of thing for clients.">
+    <meta property="og:image" content="https://ironbench.org/assets/img/custom/social-hero.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ironbench.org/">
+    <meta name="twitter:title" content="Iron Bench Labs - Independent Software Studio | BenchBoard, Boss Fight, Rad Invoice">
+    <meta name="twitter:description" content="IronBench Labs is the independent studio behind BenchBoard, Boss Fight and Rad Invoice, plus Radical Insider, Nearmynt and Kicking Dust. We build the same kind of thing for clients.">
+    <meta name="twitter:image" content="https://ironbench.org/assets/img/custom/social-hero.png">
+
+    <!-- @include head.html -->
+
+    <!-- Custom hero background overrides -->
+    <style>
+        .pp-hero-area[data-background] {
+            background-size: 100% auto;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+        @media (max-width: 1399px) {
+            .pp-hero-area[data-background] {
+                background-size: 120% auto;
+                background-position: center top;
+            }
+        }
+        @media (max-width: 1199px) {
+            .pp-hero-area[data-background] {
+                background-size: 140% auto;
+                background-position: center top;
+            }
+        }
+        @media (max-width: 991px) {
+            .pp-hero-area[data-background] {
+                background-size: 160% auto;
+                background-position: center top;
+            }
+        }
+        @media (max-width: 767px) {
+            .pp-hero-area[data-background] {
+                background-size: 200% auto;
+                background-position: center top;
+            }
+        }
+
+        /* Flagship banner image (BenchBoard) */
+        .ibl-flagship-thumb img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+        @media (max-width: 991px) {
+            .ibl-flagship-thumb img { height: 420px; }
+        }
+        @media (max-width: 575px) {
+            .ibl-flagship-thumb img { height: 260px; }
+        }
+
+        /* Studio work section: groups, status pills, cards */
+        .ibl-group-label {
+            font-family: var(--tp-ff-teko);
+            font-size: 34px;
+            font-weight: 500;
+            letter-spacing: .02em;
+            text-transform: uppercase;
+            color: #FFF669;
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 28px;
+        }
+        .ibl-group-label span {
+            font-family: var(--tp-ff-inter, inherit);
+            font-size: 14px;
+            text-transform: none;
+            letter-spacing: 0;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .ibl-status {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            padding: 4px 12px 3px;
+            border-radius: 999px;
+            font-family: var(--tp-ff-inter, inherit);
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            position: relative;
+            top: -6px;
+        }
+        .ibl-status.is-live { background: #FFF669; color: #120F10; }
+        .ibl-status.is-soon { border: 1px solid rgba(255, 246, 105, 0.7); color: #FFF669; }
+        .pp-project-item-contenet .pp-project-item-meta { display: block; margin-top: 12px; }
+        .ibl-card-built {
+            display: block;
+            margin-top: 6px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.42);
+        }
+        .ibl-card-thumb img,
+        .ibl-placeholder {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+        .ibl-placeholder {
+            border-radius: 20px;
+            background: radial-gradient(circle at 30% 20%, #23252a 0%, #16181b 60%, #121316 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform .5s;
+        }
+        .pp-project-item:hover .ibl-placeholder { transform: scale(1.05); }
+        .ibl-placeholder span {
+            font-family: var(--tp-ff-teko);
+            font-size: clamp(48px, 7vw, 96px);
+            font-weight: 500;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .ibl-publishing-note {
+            height: 100%;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            margin-bottom: 65px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .ibl-publishing-note p {
+            font-family: var(--tp-ff-teko);
+            font-size: 38px;
+            line-height: 1.1;
+            color: #fff;
+            margin: 0;
+        }
+        .ibl-publishing-note a { align-self: flex-start; }
+        .ibl-hero-secondary {
+            display: inline-block;
+            margin-top: 22px;
+            font-size: 16px;
+        }
+        .ibl-hero-secondary,
+        .ibl-publishing-note a { color: rgba(255, 255, 255, 0.9); }
+        .ibl-hero-secondary:hover,
+        .ibl-publishing-note a:hover { color: #FFF669; }
+        .ibl-service-meta {
+            display: block;
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+            color: rgba(255, 255, 255, 0.92);
+        }
+        .ibl-service-minor .pp-service-item-title { font-size: 0.6em; }
+        @media (max-width: 575px) {
+            .ibl-group-label { font-size: 28px; flex-wrap: wrap; gap: 4px 12px; }
+            .ibl-publishing-note { padding: 28px; }
+            .ibl-publishing-note p { font-size: 30px; }
+        }
+
+        /* How We Work — process steps */
+        .ibl-process-area { background-color: #0E0F11; }
+        .ibl-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .ibl-step {
+            position: relative;
+            padding: 50px 34px 44px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.02);
+            overflow: hidden;
+            transition: transform 0.45s ease, border-color 0.45s ease, background 0.45s ease;
+        }
+        .ibl-step::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(120% 120% at 100% 0%, rgba(255, 246, 105, 0.12) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity 0.45s ease;
+            pointer-events: none;
+        }
+        .ibl-step:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 246, 105, 0.55);
+            background: rgba(255, 255, 255, 0.035);
+        }
+        .ibl-step:hover::after { opacity: 1; }
+        .ibl-step-num {
+            font-family: var(--tp-ff-teko);
+            font-size: 92px;
+            line-height: 0.9;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 246, 105, 0.55);
+            transition: color 0.45s ease, -webkit-text-stroke 0.45s ease;
+        }
+        .ibl-step:hover .ibl-step-num {
+            color: #FFF669;
+            -webkit-text-stroke: 0;
+        }
+        .ibl-step-title {
+            font-family: var(--tp-ff-teko);
+            font-size: 32px;
+            line-height: 1;
+            color: var(--tp-common-white);
+            margin: 22px 0 0;
+        }
+        .ibl-step-text {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 16px;
+            line-height: 1.55;
+            margin: 16px 0 0;
+        }
+        .ibl-step-tag {
+            display: inline-block;
+            margin-top: 26px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #FFF669;
+        }
+        @media (max-width: 991px) {
+            .ibl-process-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 575px) {
+            .ibl-process-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Services tier descriptions readable on dark + yellow-hover panel */
+        .pp-service-item:hover .pp-service-item-meta { color: #120F10 !important; }
+
+        /* Technology — editorial pill rows on the yellow brand panel */
+        .ibl-tech-subtitle {
+            display: inline-block;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0E0F11;
+            opacity: 0.65;
+            margin-bottom: 18px;
+        }
+        .ibl-tech-title {
+            font-family: var(--tp-ff-teko);
+            font-size: 84px;
+            line-height: 0.95;
+            color: #0E0F11;
+            margin: 0;
+        }
+        .ibl-tech-lead {
+            color: #0E0F11;
+            opacity: 0.75;
+            font-size: 17px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .ibl-tech-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 34px 4px;
+            border-top: 1px solid rgba(14, 15, 17, 0.18);
+        }
+        .ibl-tech-rows .ibl-tech-row:last-child { border-bottom: 1px solid rgba(14, 15, 17, 0.18); }
+        .ibl-tech-cat {
+            font-family: var(--tp-ff-teko);
+            font-size: 48px;
+            line-height: 1;
+            color: #0E0F11;
+            flex: 0 0 auto;
+            min-width: 240px;
+        }
+        .ibl-tech-cat span {
+            display: block;
+            font-family: var(--tp-ff-body, sans-serif);
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            opacity: 0.55;
+            margin-top: 8px;
+        }
+        .ibl-tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+        .ibl-tech-pill {
+            font-size: 16px;
+            line-height: 1;
+            padding: 13px 24px;
+            border: 1px solid #0E0F11;
+            border-radius: 50px;
+            color: #0E0F11;
+            white-space: nowrap;
+            transition: background 0.35s ease, color 0.35s ease, transform 0.35s ease;
+            cursor: default;
+        }
+        .ibl-tech-pill:hover {
+            background: #0E0F11;
+            color: #FFF669;
+            transform: translateY(-4px);
+        }
+        @media (max-width: 767px) {
+            .ibl-tech-title { font-size: 56px; }
+            .ibl-tech-lead { margin-top: 24px; }
+            .ibl-tech-row { flex-direction: column; align-items: flex-start; gap: 22px; }
+            .ibl-tech-cat { min-width: 0; }
+            .ibl-tech-pills { justify-content: flex-start; }
+        }
+    </style>
+
+</head>
+
+<body class="tp-magic-cursor" data-bg-color="#0E0F11">
+
+    <!-- @include offcanvas.html -->
+
+    <!-- @include header.html logoClass=" d-none d-md-block" ctaHref="contact-me.html" home="" -->
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <main>
+
+                <!-- hero area start -->
+                <div class="pp-hero-area pp-hero-hight pp-hero-ptb z-index-1 d-flex align-items-end" data-background="assets/img/custom/background_v1.3.jpg">
+                    <div class="container container-1800">
+                        <div class="row">
+                            <div class="col-xl-9 col-lg-8 col-md-6">
+                                <div class="pp-hero-left z-index-1 pb-100">
+                                    <span class="pp-hero-text tp-split-text tp-split-right">We Build <br>Software Products. <br>Then We Run Them.</span>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6">
+                                <div class="pp-hero-right z-index-2 pb-100">
+                                    <div class="tp_text_anim">
+                                        <p>
+                                            IronBench Labs is the independent studio behind <br>
+                                            BenchBoard, Boss Fight, and Rad Invoice. We also <br>
+                                            educate with the latest paradigms and sell unique <br>
+                                            stuff online. We do the same kind of thing for clients.
+                                        </p>
+                                    </div>
+                                    <div class="pp-hero-btn">
+                                        <div class="tp-btn-red-circle-box tp-pp-btn-style tp_fade_anim" data-delay=".7" data-fade-from="top" data-ease="bounce">
+                                            <a class="tp-btn-red-circle-icon" href="#work">
+                                                <span>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                            <a class="tp-btn-red-circle-text" href="#work">See What We've Built</a>
+                                            <a class="tp-btn-red-circle-icon" href="#work">
+                                                <span>
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <a class="ibl-hero-secondary tp-line-white" href="contact-me.html">Or build with us &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="pp-hero-heading text-center z-index-1">
+                                    <h4 class="pp-hero-title tp-text-revel-anim" data-ease="bounce">IronBenchLabs</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- hero area end -->
+
+                <!-- brand area start -->
+                <div class="pp-brand-area ar-brand-style">
+                    <div class="tp-brand-wrapper z-index-1">
+                        <div class="swiper-container tp-brand-active">
+                            <div class="swiper-wrapper slide-transtion">
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title"><i>3 SaaS</i>Products In Production</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title"><i>Independent</i>Publishing</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title"><i>Curated</i>E-Commerce</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title"><i>20+ Yrs Of</i>Engineering Experience</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title"><i>Full Stack</i>.NET · Capacitor · JS</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- brand area end -->
+
+                <!-- project area start -->
+                <div id="work" class="pp-project-area pp-project-ptb z-index-1 pt-160 pb-100">
+                    <div class="container container-1430">
+                        <div class="row">
+                            <div class="col-xxl-3 col-xl-12 col-md-4">
+                                <div class="pp-project-sub-heading mb-70 tp_fade_anim" data-delay=".3">
+                                    <span class="tp-section-subtitle-clash clash-subtitle-pos body-ff">
+                                        Our Work
+                                        <i>
+                                            <svg width="102" height="9" viewBox="0 0 102 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M98 8L101.5 4.5L98 1M1 4H101V5H1V4Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-md-8">
+                                <div class="pp-project-heading mb-70 tp_fade_anim" data-delay=".5">
+                                    <h3 class="tp-section-title-teko fs-120">What We've <br>Built</h3>
+                                    <p class="mt-20">Six properties across software, publishing and commerce &mdash; each one designed, built and run in-house. They're our products, and our portfolio.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gx-40">
+                    <div class="col-12">
+                        <h5 class="ibl-group-label">Software<span>SaaS products</span></h5>
+                    </div>
+                    <div class="col-lg-12 tp_fade_anim" data-delay=".3" data-fade-from="left">
+                        <div class="pp-project-item tp--hover-item mb-65">
+                            <div class="pp-project-item-thumb ibl-flagship-thumb not-hide-cursor" data-cursor="View App">
+                                <a class="cursor-hide" href="https://www.benchboard.org" target="_blank" rel="noopener">
+                                    <img src="assets/img/custom/benchboard-flagship.png" alt="BenchBoard">
+                                </a>
+                            </div>
+                            <div class="pp-project-item-contenet">
+                                <h4 class="pp-project-item-title"><a href="https://www.benchboard.org" target="_blank" rel="noopener" title="View BenchBoard">BenchBoard <span style="font-size:.5em;opacity:.6;">&mdash; Flagship</span></a> <span class="ibl-status is-live">Live</span></h4>
+                                <span class="pp-project-item-meta">A baseball &amp; softball coaching platform: lineups, rosters, scorekeeping and team messaging for coaches and parents.</span>
+                                <span class="ibl-card-built">Built: real-time sync, payments, SMS, native iOS &amp; Android apps.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 tp_fade_anim" data-delay=".3" data-fade-from="left">
+                        <div class="pp-project-item tp--hover-item mb-65">
+                            <div class="pp-project-item-thumb ibl-card-thumb not-hide-cursor" data-cursor="View App">
+                                <a class="cursor-hide" href="https://bossfight.net" target="_blank" rel="noopener">
+                                    <div class="ibl-placeholder" role="img" aria-label="Boss Fight"><span>Boss Fight</span></div>
+                                </a>
+                            </div>
+                            <div class="pp-project-item-contenet">
+                                <h4 class="pp-project-item-title"><a href="https://bossfight.net" target="_blank" rel="noopener">Boss Fight</a> <span class="ibl-status is-live">Live</span></h4>
+                                <span class="pp-project-item-meta">Every 2026 House and Senate race on one map, ranked by the money &mdash; with race pages, polls and super PAC spending.</span>
+                                <span class="ibl-card-built">Built: FEC data pipeline, interactive battle map, accounts and follow lists.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 tp_fade_anim" data-delay=".5" data-fade-from="right">
+                        <div class="pp-project-item tp--hover-item mb-65">
+                            <div class="pp-project-item-thumb ibl-card-thumb">
+                                <div class="ibl-placeholder" role="img" aria-label="Rad Invoice"><span>Rad Invoice</span></div>
+                            </div>
+                            <div class="pp-project-item-contenet">
+                                <h4 class="pp-project-item-title">Rad Invoice <span class="ibl-status is-soon">Launching soon</span></h4>
+                                <span class="pp-project-item-meta">Send a quote, have your client sign it with a finger, and get paid before or after the work. Set up in five minutes.</span>
+                                <span class="ibl-card-built">Born from our own client work: quotes, e-signatures and payments in one flow.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h5 class="ibl-group-label">Publishing<span>Writing &amp; teaching</span></h5>
+                    </div>
+                    <div class="col-lg-6 tp_fade_anim" data-delay=".3" data-fade-from="left">
+                        <div class="pp-project-item tp--hover-item mb-65">
+                            <div class="pp-project-item-thumb ibl-card-thumb not-hide-cursor" data-cursor="Read">
+                                <a class="cursor-hide" href="https://radicalinsider.org" target="_blank" rel="noopener">
+                                    <img src="assets/img/logo/radical-insider-logo.png" alt="Radical Insider">
+                                </a>
+                            </div>
+                            <div class="pp-project-item-contenet">
+                                <h4 class="pp-project-item-title"><a href="https://radicalinsider.org" target="_blank" rel="noopener">Radical Insider</a> <span class="ibl-status is-live">Live</span></h4>
+                                <span class="pp-project-item-meta">Technical writing, industry analysis, and the build diary behind our products. Subscribe for hands-on classes in AI-driven development and one-on-one instruction.</span>
+                                <span class="ibl-card-built">Where we teach the paradigms we use to build everything on this page.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 tp_fade_anim" data-delay=".5" data-fade-from="right">
+                        <div class="ibl-publishing-note">
+                            <p>We write down how we build &mdash; the tools, the mistakes, the numbers &mdash; so you can learn the same way.</p>
+                            <a class="tp-line-white" href="https://radicalinsider.org" target="_blank" rel="noopener">Read Radical Insider &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h5 class="ibl-group-label">Commerce<span>Online stores</span></h5>
+                    </div>
+                    <div class="col-lg-6 tp_fade_anim" data-delay=".3" data-fade-from="left">
+                        <div class="pp-project-item tp--hover-item mb-65">
+                            <div class="pp-project-item-thumb ibl-card-thumb not-hide-cursor" data-cursor="View Store">
+                                <a class="cursor-hide" href="https://nearmynt.com" target="_blank" rel="noopener">
+                                    <img src="assets/img/logo/nearmynt-logo.png" alt="Nearmynt">
+                                </a>
+                            </div>
+                            <div class="pp-project-item-contenet">
+                                <h4 class="pp-project-item-title"><a href="https://nearmynt.com" target="_blank" rel="noopener">Nearmynt</a> <span class="ibl-status is-live">Live</span></h4>
+                                <span class="pp-project-item-meta">Curated rare finds &mdash; retro collectibles, vintage fashion, classic designer bags and one-of-a-kind pieces.</span>
+                                <span class="ibl-card-built">Built: storefront, sourcing and fulfilment workflow.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 tp_fade_anim" data-delay=".5" data-fade-from="right">
+                        <div class="pp-project-item tp--hover-item mb-65">
+                            <div class="pp-project-item-thumb ibl-card-thumb">
+                                <img src="assets/img/custom/kicking-dust.jpg" alt="Kicking Dust">
+                            </div>
+                            <div class="pp-project-item-contenet">
+                                <h4 class="pp-project-item-title">Kicking Dust <span class="ibl-status is-soon">In the works</span></h4>
+                                <span class="pp-project-item-meta">Organizers and small furniture for your home.</span>
+                                <span class="ibl-card-built">Coming to KickingDust.com.</span>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- project area end -->
+
+                <!-- service area start -->
+                <div id="services" class="pp-service-area pp-service-ptb p-relative pb-160">
+                    <div class="pp-service-shape">
+                        <img data-speed="1.1" src="assets/img/home-14/about/about-shape-2.png" alt="">
+                    </div>
+                    <div class="container container-1430">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="pp-project-sub-heading mb-40 tp_fade_anim" data-delay=".3">
+                                    <span class="tp-section-subtitle-clash clash-subtitle-pos body-ff">
+                                        Build With Us
+                                        <i>
+                                            <svg width="102" height="9" viewBox="0 0 102 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M98 8L101.5 4.5L98 1M1 4H101V5H1V4Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="pp-project-heading mb-50 tp_fade_anim" data-delay=".5">
+                                    <h3 class="tp-section-title-teko fs-120">Want One <br>Like These?</h3>
+                                    <p class="mt-20">The team that built and runs every property above will build yours &mdash; web and mobile apps, SaaS products, online stores and the tools behind them. Rad Invoice started exactly this way: we needed it for our own client work, so we built it.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid gx-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="pp-service-wrapper z-index-1">
+                                <a href="contact-me.html" class="pp-service-item current z-index-1">
+                                    <span class="pp-service-item-title">Build</span>
+                                    <span class="pp-service-item-meta ibl-service-meta">Custom software from first sketch to launch &mdash; web apps, mobile apps, SaaS products, e-commerce, dashboards and APIs.</span>
+                                </a>
+                                <a href="contact-me.html" class="pp-service-item ibl-service-minor z-index-1">
+                                    <span class="pp-service-item-title">Automate</span>
+                                    <span class="pp-service-item-meta ibl-service-meta">Stop doing repetitive work by hand &mdash; integrations, reporting, internal tools and AI workflows.</span>
+                                </a>
+                                <a href="contact-me.html" class="pp-service-item ibl-service-minor z-index-1">
+                                    <span class="pp-service-item-title">Support</span>
+                                    <span class="pp-service-item-meta ibl-service-meta">Keep what you have running &mdash; software troubleshooting, migrations, cloud setup and everyday IT.</span>
+                                </a>
+                                <a href="https://radicalinsider.org" class="pp-service-item ibl-service-minor z-index-1">
+                                    <span class="pp-service-item-title">Teach</span>
+                                    <span class="pp-service-item-meta ibl-service-meta">Hands-on classes in Zero Vibe AI-Driven Software Development, plus training for your team.</span>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- service area end -->
+
+                <!-- how we work area start -->
+                <div class="pp-award-area ibl-process-area pt-160 pb-160">
+                    <div class="container container-1430">
+                        <div class="row align-items-end mb-80">
+                            <div class="col-lg-8">
+                                <div class="pp-award-left tp_fade_anim" data-delay=".3">
+                                    <span class="tp-section-subtitle-clash clash-subtitle-pos body-ff">
+                                        How We Work
+                                        <i>
+                                            <svg width="102" height="9" viewBox="0 0 102 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M98 8L101.5 4.5L98 1M1 4H101V5H1V4Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </i>
+                                    </span>
+                                    <h3 class="tp-section-title-teko fs-120 tp_fade_anim mt-20" data-delay=".4">From First Call <br>To Launch</h3>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="tp_text_anim">
+                                    <p>The same path we use for our own products: understand the problem, build the smallest thing that solves it, ship it, then keep it running.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ibl-process-grid">
+                                    <div class="ibl-step tp_fade_anim" data-delay=".2" data-fade-from="bottom">
+                                        <span class="ibl-step-num">01</span>
+                                        <h4 class="ibl-step-title">Discovery</h4>
+                                        <p class="ibl-step-text">We map the problem, the users and the quickest route to something real. You leave with a clear plan and a price.</p>
+                                    </div>
+                                    <div class="ibl-step tp_fade_anim" data-delay=".35" data-fade-from="bottom">
+                                        <span class="ibl-step-num">02</span>
+                                        <h4 class="ibl-step-title">Build</h4>
+                                        <p class="ibl-step-text">Design and build the product &mdash; web, mobile, data and APIs. You see working software early and often.</p>
+                                    </div>
+                                    <div class="ibl-step tp_fade_anim" data-delay=".5" data-fade-from="bottom">
+                                        <span class="ibl-step-num">03</span>
+                                        <h4 class="ibl-step-title">Launch</h4>
+                                        <p class="ibl-step-text">Ship it to real users: hosting, payments, app stores, analytics. Nothing experimental on your dime.</p>
+                                    </div>
+                                    <div class="ibl-step tp_fade_anim" data-delay=".65" data-fade-from="bottom">
+                                        <span class="ibl-step-num">04</span>
+                                        <h4 class="ibl-step-title">Operate</h4>
+                                        <p class="ibl-step-text">We stay on for support, automation and the next version &mdash; the same way we run our own products.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- how we work area end -->
+
+                <!-- skill area start -->
+                <div id="technology" class="pp-skill-area ibl-tech-area pt-160 pb-160" data-bg-color="#FFF669">
+                    <div class="container container-1230">
+                        <div class="row align-items-end mb-60">
+                            <div class="col-lg-7">
+                                <span class="ibl-tech-subtitle">The Stack</span>
+                                <h2 class="ibl-tech-title tp-split-text tp-split-right">Production-grade <br>tools. Used daily.</h2>
+                            </div>
+                            <div class="col-lg-5">
+                                <p class="ibl-tech-lead">The same engineering stack behind our own products is exactly what we bring to client work — nothing experimental on your dime.</p>
+                            </div>
+                        </div>
+
+                        <div class="ibl-tech-rows">
+                            <div class="ibl-tech-row tp_fade_anim" data-delay=".2">
+                                <div class="ibl-tech-cat">Front End<span>Interfaces &amp; experience</span></div>
+                                <div class="ibl-tech-pills">
+                                    <span class="ibl-tech-pill">HTML5</span>
+                                    <span class="ibl-tech-pill">SolidJS</span>
+                                    <span class="ibl-tech-pill">Tailwind</span>
+                                    <span class="ibl-tech-pill">AnimeJS</span>
+                                    <span class="ibl-tech-pill">DriverJS</span>
+                                </div>
+                            </div>
+                            <div class="ibl-tech-row tp_fade_anim" data-delay=".3">
+                                <div class="ibl-tech-cat">Back End<span>APIs &amp; services</span></div>
+                                <div class="ibl-tech-pills">
+                                    <span class="ibl-tech-pill">ASP.NET Core</span>
+                                    <span class="ibl-tech-pill">C#</span>
+                                    <span class="ibl-tech-pill">SignalR</span>
+                                    <span class="ibl-tech-pill">REST APIs</span>
+                                </div>
+                            </div>
+                            <div class="ibl-tech-row tp_fade_anim" data-delay=".4">
+                                <div class="ibl-tech-cat">Data<span>Storage &amp; state</span></div>
+                                <div class="ibl-tech-pills">
+                                    <span class="ibl-tech-pill">PostgreSQL</span>
+                                    <span class="ibl-tech-pill">SQL Server</span>
+                                    <span class="ibl-tech-pill">MongoDB</span>
+                                    <span class="ibl-tech-pill">MySQL</span>
+                                    <span class="ibl-tech-pill">Redis</span>
+                                </div>
+                            </div>
+                            <div class="ibl-tech-row tp_fade_anim" data-delay=".5">
+                                <div class="ibl-tech-cat">Mobile<span>Cross-platform</span></div>
+                                <div class="ibl-tech-pills">
+                                    <span class="ibl-tech-pill">Capacitor</span>
+                                    <span class="ibl-tech-pill">iOS</span>
+                                    <span class="ibl-tech-pill">Android</span>
+                                    <span class="ibl-tech-pill">tvOS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- skill area end -->
+
+                <!-- brand area start -->
+                <div class="pp-brand-area ar-brand-style">
+                    <div class="tp-brand-wrapper z-index-1">
+                        <div class="swiper-container tp-brand-active">
+                            <div class="swiper-wrapper slide-transtion">
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title">Sports Tech</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title">Election Data</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title">Invoicing &amp; Payments</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title">Independent Publishing</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title">Curated Commerce</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="pp-brand-item">
+                                                        <span class="pp-brand-title">LLM-Powered Development</span>
+                                                        <span class="pp-brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.384 0H14.2411V12.4133L5.46352 3.63578L3.94829 5.15102L12.7258 13.9286H0.3125V16.0715H12.7258L3.94829 24.849L5.46352 26.3642L14.2411 17.5866V30H16.384V17.5866L25.1615 26.3642L26.6767 24.849L17.8991 16.0715H30.3125V13.9286H17.8991L26.6767 5.151L25.1615 3.63578L16.384 12.4133V0Z" fill="#FFF669" />
+                                                            </svg></span>
+                                                    </div>
+                                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- brand area end -->
+
+                <!-- about area start -->
+                <div id="about" class="pp-about-area pp-about-ptb p-relative pt-160 pb-160">
+                    <div class="container container-1430">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="pp-about-left">
+                                    <span class="tp-section-subtitle-clash clash-subtitle-pos body-ff">
+                                        About The Studio
+                                        <i>
+                                            <svg width="102" height="9" viewBox="0 0 102 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M98 8L101.5 4.5L98 1M1 4H101V5H1V4Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="pp-about-heading pb-55">
+                                    <h3 class="tp-section-title-teko fs-80 tp_fade_anim">
+                                        We build products <br>
+                                        <span>we run ourselves</span> &mdash; <br>
+                                        and we build them <br>
+                                        for you, too.
+                                    </h3>
+                                </div>
+                                <div class="pp-about-wrap">
+                                    <div class="pp-about-bottom-btn smooth">
+                                        <a href="#testimonials"><span><svg xmlns="http://www.w3.org/2000/svg" width="10" height="21" viewBox="0 0 10 21" fill="none">
+                                                    <path d="M4.57574 20.4243C4.81005 20.6586 5.18995 20.6586 5.42426 20.4243L9.24264 16.6059C9.47696 16.3716 9.47696 15.9917 9.24264 15.7574C9.00833 15.523 8.62843 15.523 8.39411 15.7574L5 19.1515L1.60589 15.7574C1.37157 15.523 0.991674 15.523 0.757359 15.7574C0.523045 15.9917 0.523045 16.3716 0.757359 16.6059L4.57574 20.4243ZM4.4 0L4.4 20H5.6L5.6 0L4.4 0Z" fill="white" />
+                                                </svg></span></a>
+                                    </div>
+                                    <div class="pp-about-content tp_text_anim">
+                                        <p>
+                                            Iron Bench Labs LLC is an independent studio run by <br>
+                                            a senior engineer with 20+ years in the field. We design, <br>
+                                            build and operate our own software, publishing and <br>
+                                            commerce properties &mdash; and bring the same engineering to client work.
+                                        </p>
+                                        <div class="pp-about-btn">
+                                            <div class="tp-btn-red-circle-box tp-pp-btn-style tp_fade_anim" data-delay=".7" data-fade-from="top" data-ease="bounce">
+                                                <a class="tp-btn-red-circle-icon" href="contact-me.html" title="Contact Us">
+                                                    <span>
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- about area end -->
+
+                <!-- testimonial area start -->
+                <div id="testimonials" class="pp-testimonial-area pp-testimonial-ptb pb-160">
+                    <div class="container container-1430">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="pp-testimonial-heading mb-50">
+                                    <span class="tp-section-subtitle-clash clash-subtitle-pos body-ff">
+                                        What People Are Saying
+                                        <i>
+                                            <svg width="102" height="9" viewBox="0 0 102 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M98 8L101.5 4.5L98 1M1 4H101V5H1V4Z" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pp-testimonial-slider-wrapper">
+                        <div class="design-testimonial-slide-wrap">
+                            <div class="swiper-container design-testimonial-active">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="design-testimonial-item">
+                                            <div class="design-testimonial-author">
+                                                <h4>Marcus - Nebraska Athletics</h4>
+                                                <span>Travel Ball Coach — BenchBoard User</span>
+                                            </div>
+                                            <div class="design-testimonial-review d-flex align-items-end">
+                                                <h4>4.4</h4>
+                                                <div class="design-testimonial-review-icon">
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                </div>
+                                            </div>
+                                            <div class="design-testimonial-text">
+                                                <p>"I hated writing lineups on paper. It used to take me 30 minutes think it up and write them — now it's 10 seconds to print them."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="design-testimonial-item">
+                                            <div class="design-testimonial-author">
+                                                <h4>Dev J.</h4>
+                                                <span>Software Engineer — Radical Insider Reader</span>
+                                            </div>
+                                            <div class="design-testimonial-review d-flex align-items-end">
+                                                <h4>4.2</h4>
+                                                <div class="design-testimonial-review-icon">
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                </div>
+                                            </div>
+                                            <div class="design-testimonial-text">
+                                                <p>"Radical Insider is an honest dev journal I found myself just following consistently. Real talk about building with LLMs, not hype."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="design-testimonial-item">
+                                            <div class="design-testimonial-author">
+                                                <h4>Kevin M.</h4>
+                                                <span>Collector — Nearmynt Customer</span>
+                                            </div>
+                                            <div class="design-testimonial-review d-flex align-items-end">
+                                                <h4>4.9</h4>
+                                                <div class="design-testimonial-review-icon">
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                </div>
+                                            </div>
+                                            <div class="design-testimonial-text">
+                                                <p>"Nearmynt has the best-curated retro inventory I've found. Everything is described accurately and ships fast."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="design-testimonial-item">
+                                            <div class="design-testimonial-author">
+                                                <h4>Sandra L.</h4>
+                                                <span>Youth Softball Parent — BenchBoard User</span>
+                                            </div>
+                                            <div class="design-testimonial-review d-flex align-items-end">
+                                                <h4>4.5</h4>
+                                                <div class="design-testimonial-review-icon">
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                    <span><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.99994 0L11.0206 6.21885H17.5594L12.2694 10.0623L14.29 16.2812L8.99994 12.4377L3.70987 16.2812L5.7305 10.0623L0.44043 6.21885H6.97931L8.99994 0Z" fill="#FFCF27" /></svg></span>
+                                                </div>
+                                            </div>
+                                            <div class="design-testimonial-text">
+                                                <p>"Our team uses BenchBoard every game. We add guest players without having to deal with magnets and labels. We print right on the spot and we're done."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- testimonial area end -->
+
+                <!-- social area: hidden until real profile URLs exist. To restore, replace each href="#" and remove the comment wrapper.
+                
+                <div class="pp-social-area pp-social-ptb pb-100">
+                    <div class="container-fluid gx-0">
+                        <div class="row gx-0">
+                            <div class="col-lg-12">
+                                <div class="pp-social-wrapper p-relative fix pt-20">
+                                    <a href="#" class="pp-social-item img-pos-1 active">
+                                        <div class="pp-social-item-wrap p-relative">
+                                            <p class="text-left">Releases &amp; <br>
+                                                Open Source</p>
+                                            <h3 class="pp-social-item-title">Facebook</h3>
+                                        </div>
+                                        <div class="pp-social-item-thumb">
+                                            <img src="assets/img/home-14/social/logo-facebook.svg" alt="Facebook" width="200" height="150" class="thumb-1">
+                                            <img src="assets/img/home-14/social/logo-facebook.svg" alt="Facebook" width="340" height="250" class="thumb-2">
+                                            <img src="assets/img/home-14/social/logo-facebook.svg" alt="Facebook" width="130" height="180" class="thumb-3">
+                                            <img src="assets/img/home-14/social/logo-facebook.svg" alt="Facebook" width="240" height="180" class="thumb-4">
+                                        </div>
+                                    </a>
+                                    <a href="#" class="pp-social-item img-pos-2">
+                                        <div class="pp-social-item-wrap p-relative">
+                                            <h3 class="pp-social-item-title">Instagram</h3>
+                                            <p class="text-right">Behind the <br>
+                                                build</p>
+                                        </div>
+                                        <div class="pp-social-item-thumb">
+                                            <img src="assets/img/home-14/social/logo-instagram.svg" alt="Instagram" width="340" height="250" class="thumb-1">
+                                            <img src="assets/img/home-14/social/logo-instagram.svg" alt="Instagram" width="200" height="150" class="thumb-2">
+                                            <img src="assets/img/home-14/social/logo-instagram.svg" alt="Instagram" width="240" height="180" class="thumb-3">
+                                            <img src="assets/img/home-14/social/logo-instagram.svg" alt="Instagram" width="130" height="180" class="thumb-4">
+                                        </div>
+                                    </a>
+                                    <a href="#" class="pp-social-item img-pos-3">
+                                        <div class="pp-social-item-wrap p-relative">
+                                            <p class="text-left">Connect <br>
+                                                &amp; partner</p>
+                                            <h3 class="pp-social-item-title">TikTok</h3>
+                                        </div>
+                                        <div class="pp-social-item-thumb">
+                                            <img src="assets/img/home-14/social/logo-tiktok.svg" alt="TikTok" width="200" height="150" class="thumb-1">
+                                            <img src="assets/img/home-14/social/logo-tiktok.svg" alt="TikTok" width="340" height="250" class="thumb-2">
+                                            <img src="assets/img/home-14/social/logo-tiktok.svg" alt="TikTok" width="130" height="180" class="thumb-3">
+                                            <img src="assets/img/home-14/social/logo-tiktok.svg" alt="TikTok" width="240" height="180" class="thumb-4">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                social area end -->
+
+            </main>
+
+            <!-- @include footer.html primaryLabel="Get In Touch" primaryHref="contact-me.html" -->
+
+        </div>
+    </div>
+
+    <!-- @include scripts.html -->
+
+</body>
+
+</html>

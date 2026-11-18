@@ -1,7 +1,35 @@
 # IronBench Labs — Website
 
-Static marketing site for IronBench Labs (parent studio behind **BenchBoard**).
+Static marketing site for IronBench Labs, the studio behind **BenchBoard**,
+**Boss Fight**, **Rad Invoice**, **Radical Insider**, **Nearmynt** and **Kicking Dust**.
 Hosted on Namecheap/cPanel, deployed from this GitHub repo.
+
+---
+
+## ✏️ Editing pages — edit `src/`, then build
+
+The `.html` files at the repo root are **generated**. Don't edit them directly.
+
+- `src/pages/*.html`: one source file per page (page-specific content).
+- `src/partials/*.html`: shared pieces included into every page:
+  `head.html` (favicon + CSS), `offcanvas.html`, `header.html`, `nav.html`
+  (the menu), `footer.html`, `scripts.html`.
+
+After any change:
+
+```bash
+node build.js
+```
+
+Then commit **both** `src/` and the regenerated root `.html` files. cPanel deploys
+only the root files, so `src/` and `build.js` never reach the server.
+
+Include syntax (documented at the top of `build.js`):
+`<!-- @include footer.html primaryLabel="Get In Touch" -->` with `{{name}}` slots
+and `<!-- @if name --> … <!-- @endif -->` blocks.
+
+New page: add `src/pages/<name>.html`, run the build, **and** add a `/bin/cp`
+line to `.cpanel.yml` (see below).
 
 ---
 
