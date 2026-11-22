@@ -113,7 +113,9 @@
                     </div>
                 </div>
 
-                <div class="form-card" data-reveal>
+                <!-- Two faces share this card: the form, and a receipt shown after a successful send. -->
+                <div class="form-card" id="form-card" data-reveal>
+                    <div class="card-face form-face" id="form-face">
                     <h2>Let's talk.</h2>
                     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                         <!-- Web3Forms config: replace the access key below with your own from https://web3forms.com (free, tied to your email) -->
@@ -158,6 +160,19 @@
                             </div>
                         </div>
                     </form>
+                    </div>
+
+                    <div class="card-face receipt" id="receipt" aria-hidden="true" inert>
+                        <span class="receipt-stamp" aria-hidden="true">Sent &#10003;</span>
+                        <span class="label hot">Message received</span>
+                        <h2 class="receipt-title" id="receipt-title" tabindex="-1">Thanks<span id="receipt-name"></span>. We've got it.</h2>
+                        <p class="receipt-lede" id="receipt-lede">We'll get back to you shortly. Here's what you sent:</p>
+                        <dl class="receipt-list" id="receipt-list"></dl>
+                        <div class="receipt-actions">
+                            <button class="btn" type="button" id="send-another">Send another message <span class="arr" aria-hidden="true">&rarr;</span></button>
+                            <a class="btn btn--ghost" href="index.html#work">See our work <span class="arr" aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -255,22 +270,110 @@
             var FRIENDLY_REJECT = "Hmm, that didn't go through. Our spam filter can be a little picky — try adding a sentence or two about what you need, then send again.";
             var FRIENDLY_OFFLINE = "We couldn't reach our mail service just now. Check your connection and try again.";
 
+            // ---- Receipt: after a successful send the form slides away and a summary of
+            // what was sent slides in, in the same card. "Send another" swaps back. ----
+            var card = document.getElementById('form-card');
+            var formFace = document.getElementById('form-face');
+            var receipt = document.getElementById('receipt');
+            var receiptList = document.getElementById('receipt-list');
+            var receiptName = document.getElementById('receipt-name');
+            var receiptLede = document.getElementById('receipt-lede');
+            var receiptTitle = document.getElementById('receipt-title');
+            var sendAnother = document.getElementById('send-another');
+            var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function addRow(label, value, i, cls) {
+                if (!value) return;
+                var row = document.createElement('div');
+                row.style.setProperty('--i', i);
+                if (cls) row.className = cls;
+                var dt = document.createElement('dt');
+                var dd = document.createElement('dd');
+                dt.textContent = label;
+                dd.textContent = value; // textContent: visitor input is never parsed as HTML
+                row.appendChild(dt);
+                row.appendChild(dd);
+                receiptList.appendChild(row);
+            }
+
+            function fillReceipt(data) {
+                var name = (data.get('name') || '').trim();
+                var email = (data.get('email') || '').trim();
+                receiptName.textContent = name ? ', ' + name.split(/\s+/)[0] : '';
+                receiptLede.textContent = email
+                    ? "We'll reply to " + email + " shortly. Here's what you sent:"
+                    : "We'll get back to you shortly. Here's what you sent:";
+                receiptList.textContent = '';
+                var i = 0;
+                addRow('Topics', (data.get('interest') || '').trim(), i++);
+                addRow('Name', name, i++);
+                addRow('Email', email, i++);
+                addRow('Phone', (data.get('phone') || '').trim(), i++);
+                addRow('Website', (data.get('website') || '').trim(), i++);
+                addRow('Message', (data.get('message') || '').trim(), i++, 'is-message');
+                addRow('Text updates', data.get('sms_consent') ? 'Yes, you opted in' : 'No', i++);
+            }
+
+            // Swap faces; the card's height glides from one face to the other.
+            function showReceipt(on) {
+                var from = card.getBoundingClientRect().height;
+                card.classList.toggle('is-sent', on);
+                formFace.setAttribute('aria-hidden', String(on));
+                receipt.setAttribute('aria-hidden', String(!on));
+                formFace.inert = on;
+                receipt.inert = !on;
+                if (reducedMotion) return;
+                var to = card.getBoundingClientRect().height;
+                card.style.height = from + 'px';
+                card.getBoundingClientRect(); // commit the start height before animating
+                card.style.height = to + 'px';
+                var done = function (ev) {
+                    if (ev && (ev.target !== card || ev.propertyName !== 'height')) return;
+                    card.style.height = '';
+                    card.removeEventListener('transitionend', done);
+                };
+                card.addEventListener('transitionend', done);
+                setTimeout(done, 700); // in case transitionend never fires
+            }
+
+            function scrollCardIntoView() {
+                var top = card.getBoundingClientRect().top;
+                if (top < 80 || top > window.innerHeight * 0.6) {
+                    window.scrollTo({ top: window.scrollY + top - 96, behavior: reducedMotion ? 'auto' : 'smooth' });
+                }
+            }
+
+            if (sendAnother) {
+                sendAnother.addEventListener('click', function () {
+                    form.reset();
+                    chips.forEach(function (c, i) { setChip(c, i === 0); });
+                    syncInterest();
+                    setResp('', '');
+                    showReceipt(false);
+                    scrollCardIntoView();
+                    var first = document.getElementById('f-name');
+                    if (first) first.focus({ preventScroll: true });
+                });
+            }
+
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 setResp('', 'Sending…');
                 if (submitBtn) submitBtn.disabled = true;
+                var data = new FormData(form); // snapshot of exactly what is sent
                 fetch(form.action, {
                     method: 'POST',
-                    body: new FormData(form),
+                    body: data,
                     headers: { 'Accept': 'application/json' }
                 })
                     .then(function (r) { return r.json(); })
                     .then(function (json) {
                         if (json.success) {
-                            setResp('success', "Thanks! Your message has been sent — we'll get back to you shortly.");
-                            form.reset();
-                            chips.forEach(function (c, i) { setChip(c, i === 0); });
-                            syncInterest();
+                            setResp('', '');
+                            fillReceipt(data);
+                            showReceipt(true);
+                            scrollCardIntoView();
+                            if (receiptTitle) receiptTitle.focus({ preventScroll: true });
                         } else {
                             if (window.console) console.warn('Contact form rejected:', json && json.message);
                             setResp('error', FRIENDLY_REJECT, true);

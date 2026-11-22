@@ -324,7 +324,36 @@ a.tile:hover img { transform: scale(1.05); }
 .chip { padding: 11px 18px 10px; border: 2px solid var(--fg); border-radius: 999px; background: transparent; font-weight: 700; font-size: 15px; line-height: 1; transition: transform .18s, background-color .18s, color .18s, box-shadow .18s; }
 .chip:hover { transform: translateY(-2px) rotate(-2deg); }
 .chip.active { background: var(--fg); color: var(--bg); box-shadow: 3px 3px 0 var(--hot); }
-.form-card { margin-top: clamp(36px, 5vw, 60px); padding: clamp(22px, 4vw, 52px); border: 2px solid var(--fg); border-radius: var(--r); background: var(--card); box-shadow: 9px 9px 0 var(--fg); }
+.form-card { --pad: clamp(22px, 4vw, 52px); position: relative; overflow: hidden; margin-top: clamp(36px, 5vw, 60px); padding: var(--pad); border: 2px solid var(--fg); border-radius: var(--r); background: var(--card); box-shadow: 9px 9px 0 var(--fg); transition: height .5s cubic-bezier(.2, .9, .2, 1), box-shadow .4s; }
+
+/* Two faces in one card: only the active face takes up space; the other is
+   lifted out of the flow and faded, so the card's height follows the active one. */
+.card-face { transition: opacity .35s ease, transform .5s cubic-bezier(.2, .9, .2, 1), visibility 0s linear 0s; }
+.receipt, .form-card.is-sent .form-face { position: absolute; top: var(--pad); left: var(--pad); right: var(--pad); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .3s ease, transform .45s cubic-bezier(.2, .9, .2, 1), visibility 0s linear .45s; }
+.receipt { transform: translateY(36px) rotate(-1deg); }
+.form-card.is-sent .form-face { transform: translateY(-28px) scale(.97); }
+.form-card.is-sent .receipt { position: relative; top: auto; left: auto; right: auto; opacity: 1; visibility: visible; pointer-events: auto; transform: none; transition-delay: .12s, .12s, 0s; }
+.form-card.is-sent { box-shadow: 9px 9px 0 var(--hot); }
+
+.receipt-stamp { position: absolute; top: -4px; right: 0; padding: 9px 16px 8px; border: 3px solid var(--hot); border-radius: 12px; color: var(--hot); font-family: var(--ff-mono); font-size: 15px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; transform: rotate(8deg); opacity: 0; }
+/* Visible by default once sent; the stamp-down animation is a bonus (off when motion is reduced). */
+.form-card.is-sent .receipt-stamp { opacity: 1; animation: stamp .55s cubic-bezier(.3, 1.6, .5, 1) .45s both; }
+@keyframes stamp { 0% { opacity: 0; transform: rotate(-14deg) scale(2.2); } 100% { opacity: 1; transform: rotate(8deg) scale(1); } }
+.receipt .label { display: block; margin-bottom: 14px; }
+.receipt-title { padding-right: 120px; font-size: clamp(30px, 4vw, 52px); font-weight: 800; letter-spacing: -.04em; line-height: 1; margin-bottom: 14px; }
+.receipt-title:focus { outline: none; }
+.receipt-lede { color: var(--muted); max-width: 60ch; margin-bottom: 26px; overflow-wrap: anywhere; }
+.receipt-list { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 2px solid var(--fg); margin: 0 0 30px; }
+.receipt-list > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 24px; padding: 14px 0; border-bottom: 1px dashed var(--line); opacity: 0; transform: translateX(-10px); transition: opacity .35s, transform .35s; transition-delay: calc(.3s + var(--i, 0) * 60ms); }
+.form-card.is-sent .receipt-list > div { opacity: 1; transform: none; }
+.receipt-list dt { font-family: var(--ff-mono); font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.receipt-list dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.receipt-list .is-message dd { font-weight: 400; white-space: pre-wrap; max-height: 16em; overflow-y: auto; }
+.receipt-actions { display: flex; flex-wrap: wrap; gap: 16px 20px; }
+@media (max-width: 640px) {
+    .receipt-list > div { grid-template-columns: 1fr; }
+    .receipt-title { padding-right: 0; padding-top: 44px; }
+}
 .form-card h2 { font-size: clamp(30px, 4vw, 52px); font-weight: 800; letter-spacing: -.04em; line-height: 1; margin-bottom: 28px; }
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 26px; }
 .field { display: flex; flex-direction: column; gap: 8px; }
