@@ -367,3 +367,5 @@ a.tile:hover img { transform: scale(1.05); }
     .js [data-reveal], .js .hero-title .line { opacity: 1; transform: none; }
     .ticker { transform: none; }
 }
+.ajax-response a { color: inherit; text-decoration: underline; text-decoration-thickness: 2px; }
+.ajax-response.error { font-weight: 600; max-width: 62ch; line-height: 1.5; }

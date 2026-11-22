@@ -149,12 +149,29 @@
             });
             syncInterest();
 
-            function setResp(cls, msg) {
+            // Shows a status line under the button. With withEmail, appends a direct
+            // email fallback; the address is assembled here so it never sits in the HTML.
+            function setResp(cls, msg, withEmail) {
                 if (!resp) return;
                 resp.classList.remove('success', 'error');
                 if (cls) resp.classList.add(cls);
                 resp.textContent = msg;
+                if (withEmail) {
+                    var addr = 'learnmore' + '@' + 'ironbench.org';
+                    var a = document.createElement('a');
+                    a.href = 'mailto:' + addr;
+                    a.textContent = addr;
+                    resp.appendChild(document.createTextNode(' Or email us directly at '));
+                    resp.appendChild(a);
+                    resp.appendChild(document.createTextNode('.'));
+                }
             }
+
+            // Web3Forms rejects messages its spam filter dislikes (e.g. random letters)
+            // with a curt "security reasons" error. Visitors get a friendlier note;
+            // the service's own reason goes to the console for debugging.
+            var FRIENDLY_REJECT = "Hmm, that didn't go through. Our spam filter can be a little picky — try adding a sentence or two about what you need, then send again.";
+            var FRIENDLY_OFFLINE = "We couldn't reach our mail service just now. Check your connection and try again.";
 
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
@@ -173,11 +190,13 @@
                             chips.forEach(function (c, i) { setChip(c, i === 0); });
                             syncInterest();
                         } else {
-                            setResp('error', json.message || 'Something went wrong. Please try again in a moment.');
+                            if (window.console) console.warn('Contact form rejected:', json && json.message);
+                            setResp('error', FRIENDLY_REJECT, true);
                         }
                     })
-                    .catch(function () {
-                        setResp('error', 'Network error. Please check your connection and try again.');
+                    .catch(function (err) {
+                        if (window.console) console.warn('Contact form request failed:', err);
+                        setResp('error', FRIENDLY_OFFLINE, true);
                     })
                     .finally(function () {
                         if (submitBtn) submitBtn.disabled = false;
